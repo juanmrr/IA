@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<!-- File: utilidades.aiml -->
+<!-- Author: Juan Manuel Rubio Rodriguez -->
+<!-- Last modified: February 8, 2018 -->
+<!--  -->
+
+<!-- Nivel 1 -->
+
+
+<!-- Regla que genera una fruta aleatoriamente -->
+
+<category>
+	<pattern>PIENSA EN UNA FRUTA</pattern>
+	<template>
+	<think>
+	<set name="fruta">
+		<random>
+		<li>fresa</li>
+		<li>manzana</li>
+		<li>naranja</li>
+		<li>kiwi</li>
+		<li>mandarina</li>
+		<li>pina</li>
+		<li>mango</li>
+		<li>melocoton</li>
+		<li>higo</li>
+		<li>ciruela</li>
+		<li>pera</li>
+		<li>platano</li>
+		<li>coco</li>
+		<li>aguacate</li>
+		<li>nuez</li>
+		<li>cereza</li>
+		</random>
+		</set>
+	</think>
+	Ya he pensado la <set name="topic"> fruta </set> :)
+	</template>
+</category>
+
+
+<topic name="fruta">
+
+<!-- ¿Hemos acertado? -->
+
+<category>
+<pattern># [ES EN] EL * </pattern>
+	<template>
+		<think>
+		<set var="ganar"><srai>COMPARE <star index="2"/> WITH <get name="fruta"/></srai></set>
+		</think>
+		<condition var="ganar">
+			<li value="YES">Enhorabuena has acertado jugamos de nuevo?</li>
+			<li>Intentalo de nuevo</li>
+		</condition>
+	</template>
+</category>
+
+<!-- ¿Hemos acertado? b) -->
+
+<category>
+<pattern># [ES EN] LA * </pattern>
+	<template>
+		<think>
+		<set var="ganar"><srai>COMPARE <star index="2"/> WITH <get name="fruta"/></srai></set>
+		</think>
+		<condition var="ganar">
+			<li value="YES">Enhorabuena has acertado jugamos de nuevo?</li>
+			<li>Intentalo de nuevo</li>
+		</condition>
+	</template>
+</category>
+
+
+
+
+<!-- Adivinar atributos -->
+
+<category>
+<pattern>^ ES * </pattern>
+	<template>
+	<think>
+		<set var="lista"><map name="atribfrutas"><get name="fruta"/></map></set>
+		<set var="condicion"><srai>FINDITEM <star index="2"/> in <get var="lista"/></srai></set>
+		</think>
+		<condition var="condicion">
+			<li value="0">No</li>
+			<li>Si</li>
+		</condition>
+	</template>
+</category>
+
+
+
+<!-- Adivinar vitaminas -->
+
+<category>
+<pattern>TIENE VITAMINA * </pattern>
+	<template>
+	<think>
+		<set var="lista"><map name="atribfrutas"><get name="fruta"/></map></set>
+		<set var="condicion"><srai>FINDITEM <star/> in <get var="lista"/></srai></set>
+		</think>
+		<condition var="condicion">
+			<li value="0">No</li>
+			<li>Si</li>
+		</condition>
+	</template>
+</category>
+
+
+
+
+<!-- Atributos --> 
+
+<category>
+<pattern>(EL)(LA) <set>frutas</set> ES * </pattern>
+	<template>
+	<think>
+		<set var="atributo"><map name="atribfrutas"><star index="1"/></map></set>
+		<set var="condicion"><srai>FINDITEM <star index="2"/> in <get var="atributo"/></srai></set>
+		</think>
+		<condition var="condicion">
+			<li value="0">No</li>
+			<li>Si</li>
+		</condition>
+	</template>
+</category>
+
+
+
+<!-- Atributos (vitaminas) --> 
+
+<category>
+<pattern>(EL)(LA) * TIENE VITAMINA * </pattern>
+	<template>
+	<think>
+		<set var="atributo"><map name="atribfrutas"><star index="1"/></map></set>
+		<set var="condicion"><srai>FINDITEM <star index="2"/> in <get var="atributo"/></srai></set>
+		</think>
+		<condition var="condicion">
+			<li value="0">No</li>
+			<li>Si</li>
+		</condition>
+	</template>
+</category>
+
+
+
+
+<!-- Jugar de nuevo -->
+
+<category>
+<pattern>SI</pattern>
+<that>ENHORABUENA HAS ACERTADO JUGAMOS DE NUEVO</that>
+<template><srai>PIENSA EN UNA FRUTA</srai></template>
+</category>
+
+</topic>
+
+
+<!-- Fin del juego -->
+
+<category>
+<pattern>NO</pattern>
+<that>ENHORABUENA HAS ACERTADO JUGAMOS DE NUEVO</that>
+<template><srai>QUE QUIERES HACER</srai></template>
+</category>
+
+
+
+</aiml>

@@ -1,0 +1,15 @@
+grande
+mediana
+pequena
+acida
+semiacida
+neutra
+dulce
+a
+b
+c
+verde
+roja
+amarilla
+marron
+morada

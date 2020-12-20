@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<!-- File: utilidades.aiml -->
+<!-- Author: Juan Manuel Rubio Rodriguez -->
+<!-- Last modified: February 8, 2018 -->
+<!--  -->
+
+<!-- Nivel 2 -->
+
+
+<category>
+<pattern>QUE QUIERES HACER</pattern>
+<template>Que quieres hacer?</template>
+</category>
+
+<category>
+<pattern>^ JUG+</pattern>
+<template>Quieres pensar o adivinar?</template>
+</category>
+
+<category>
+<pattern>^ PENSAR</pattern>
+<template><srai>VOY A PENSAR EN UNA FRUTA</srai></template>
+</category>
+
+<category>
+<pattern>^ ADIVINAR</pattern>
+<template><srai>PIENSA EN UNA FRUTA</srai></template>
+</category>
+
+
+
+<!-- Regla que inicializa el juego -->
+
+
+<category>
+<pattern>VOY A PENSAR EN UNA FRUTA</pattern>
+	<template>Voy a <set name="topic"> adivinar </set> tu fruta
+		<think>		
+			<set name="listaatributos"><readset>atributos</readset></set>
+			<set name="lista"><readset>frutas</readset></set>
+			<set name="seguir">SI</set>
+		</think>
+		<srai>PREGUNTA</srai>
+	</template>
+</category>
+
+
+
+<topic name="adivinar">
+
+
+
+<!-- Regla que capta la respuesta binaria del usuario -->
+
+
+<category>
+<pattern> * </pattern>
+	<template>
+	<think>
+		<set name="respuesta"><star/></set>
+		<set var="contador"><srai>COUNT <get name="lista"/></srai></set>
+		<set name="item"><srai>SELECTITEM <get var="contador"/> in <get name="lista"/></srai></set>
+
+	</think>
+		<condition var="contador">
+			<li value="0"></li>
+			<li><srai>RESPUESTA</srai>
+	<think>
+			<set var="contador"><map name="predecessor"><get var="contador"/></map></set>
+			<set name="item"><srai>SELECTITEM <get var="contador"/> in <get name="lista"/></srai></set> 
+	</think>
+			<loop/>
+
+			</li>
+
+		</condition>
+	<condition name="seguir">
+		<li value="SI">
+			<srai>PREGUNTA</srai>
+		</li>
+	</condition>
+	</template>
+</category>
+
+
+
+<!-- Regla que regula las preguntas que va a realizar el bot -->
+
+
+<category>
+<pattern>PREGUNTA</pattern>
+	<template>
+	<think>
+		<set name="atributo"><srai>TOP <get name="listaatributos"/></srai></set>
+	</think>
+		La fruta es (o tiene vitamina) <get name="atributo"/>?
+	<think>
+		<set name="listaatributos"><srai>REMAIN <get name="listaatributos"/></srai></set>
+	</think>  
+	</template>
+</category>
+
+
+
+<!-- Regla que procesa la respuesta del usuario -->
+
+
+<category>
+<pattern>RESPUESTA</pattern>
+	<template>
+		<condition name="respuesta">
+			<li value="SI">
+				<think>
+					<set var="aux"><map name="atribfrutas"><get name="item"/></map></set>
+					<set var="atrib"><srai>FINDITEM <get name="atributo"/> in <get var="aux"/></srai></set>
+				</think>
+				<condition var="atrib">
+					<li value="0">
+						<think>
+							<set var="borrar"><srai>FINDITEM <get name="item"/> in <get name="lista"/></srai></set>
+							<set name="lista"><srai>REMOVEITEM <get var="borrar"/> in <get name="lista"/></srai></set>
+							<set var="ganar"><srai>COUNT <get name="lista"/></srai></set>
+						</think>
+						<condition var="ganar">
+							<li value="0">ME HAS MENTIDOOO la fruta no era el/la <get name="ultimafruta"/></li>
+							<li value="1">Creo que la fruta que has pensado es <get name="lista"/>
+							<think>
+								<set name="ultimafruta"><get name="lista"/></set>
+							</think>
+							<srai>GANAR</srai>
+							<think>
+								<set name="seguir">NO</set>
+							</think>
+							</li>
+						</condition>
+					</li>
+				</condition>
+			</li>
+			<li value="NO">
+				<think>
+					<set var="aux"><map name="atribfrutas"><get name="item"/></map></set>
+					<set var="atrib"><srai>FINDITEM <get name="atributo"/> in <get var="aux"/></srai></set>
+				</think>
+				<condition var="atrib">
+					<li value="0"></li>
+					<li>
+						<think>
+							<set var="borrar"><srai>FINDITEM <get name="item"/> in <get name="lista"/></srai></set>
+							<set name="lista"><srai>REMOVEITEM <get var="borrar"/> in <get name="lista"/></srai></set>
+							<set var="ganar"><srai>COUNT <get name="lista"/></srai></set>
+						</think>
+						<condition var="ganar">
+							<li value="0">ME HAS MENTIDOOO la fruta no era el/la <get name="ultimafruta"/></li>
+							<li value="1">Creo que la fruta que has pensado es <get name="lista"/>
+							<think>
+								<set name="ultimafruta"><get name="lista"/></set>
+							</think>
+							<srai>GANAR</srai>
+							<think>
+								<set name="seguir">NO</set>
+							</think>
+							</li>
+						</condition>
+					</li>
+				</condition>
+			</li>
+		</condition>
+	</template>
+</category>
+
+
+
+</topic>
+
+
+<set name="topic"/>
+
+
+
+<!-- Regla que salta cuando se ha ganado -->
+
+
+<category>
+<pattern>GANAR</pattern>
+<template><srai>QUE QUIERES HACER</srai></template>
+</category>
+
+
+</aiml>

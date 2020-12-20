@@ -1,0 +1,61 @@
+0,^ DOCEN+,*,*,Preguntame lo que quieras sobre la <set name="topic"> asignatura </set>,nivel0.aiml
+0,COMO CONSIGO SUPERAR LA PARTE PRACTICA,*,ASIGNATURA,Consiguiendo una media igual o superior a 5 entre las practicas y el examen de problemas,nivel0.aiml
+0,^ SUPER+ * PRACTICA,*,ASIGNATURA,Consiguiendo una media igual o superior a 5 entre las practicas y el examen de problemas,nivel0.aiml
+0,COMO SE EVALUA EN LA CONVOCATORIA ORDINARIA,*,ASIGNATURA,Media ponderada de la parte teorica y practica si se tiene al menos un 3 en ambas,nivel0.aiml
+0,^ EVALUA+ * CONVOCATORIA ORDINARIA,*,ASIGNATURA,Media ponderada de la parte teorica y practica si se tiene al menos un 3 en ambas,nivel0.aiml
+0,HAY EXAMEN DE PRACTICAS EN LA CONVOCATORIA EXTRAORDINARIA,*,ASIGNATURA,Hay un examen escrito,nivel0.aiml
+0,^ EXAMEN ^ PRACTIC+ * CONVOCATORIA EXTRAORDINARIA,*,ASIGNATURA,Hay un examen escrito,nivel0.aiml
+0,QUE PASA SI NO PUEDO ASISTIR A CLASE REGULARMENTE,*,ASIGNATURA,Tengo que pedir un examen unico final,nivel0.aiml
+0,^ NO * CLASE ^ REGULAR+,*,ASIGNATURA,Tengo que pedir un examen unico final,nivel0.aiml
+0,HAY NOTA MINIMA PARA APROBAR,*,ASIGNATURA,Se debe tener un 5 como media y un 3 como minimo en cada parte,nivel0.aiml
+0,^ NOTA MINIMA * APROBA+,*,ASIGNATURA,Se debe tener un 5 como media y un 3 como minimo en cada parte,nivel0.aiml
+0,LAS PRACTICAS SON OBLIGATORIAS,*,ASIGNATURA,No pero hay que aprobar esa parte o sacar al menos un 3 para hacer la media,nivel0.aiml
+0,^ PRACTICA+ ^ OBLIGATORIA+,*,ASIGNATURA,No pero hay que aprobar esa parte o sacar al menos un 3 para hacer la media,nivel0.aiml
+0,CUANTO VALE CADA PRACTICA CON RESPECTO A LA NOTA FINAL,*,ASIGNATURA,Cada practica vale un 25 por ciento de la nota total destinada que es un 90 por ciento,nivel0.aiml
+0,^ PRACTICA * FINAL,*,ASIGNATURA,Cada practica vale un 25 por ciento de la nota total destinada que es un 90 por ciento,nivel0.aiml
+0,CUANTO VALE LA PARTICIPACION CON RESPECTO A LA NOTA FINAL,*,ASIGNATURA,Cuenta un 10 por ciento de la nota de practicas,nivel0.aiml
+0,^ PARTICIPA+ * NOTA FINAL,*,ASIGNATURA,Cuenta un 10 por ciento de la nota de practicas,nivel0.aiml
+0,COMO SE CONSIGUEN PUNTOS POR PARTICIPACION,*,ASIGNATURA,Se tendran en cuenta la asistencia y la participacion en clase,nivel0.aiml
+0,^ PUNTO+ * PARTICIPA+,*,ASIGNATURA,Se tendran en cuenta la asistencia y la participacion en clase,nivel0.aiml
+0,LOS TRABAJOS SON INDIVIDUALES,*,ASIGNATURA,Si,nivel0.aiml
+0,^ TRABAJO+ ^ INDIVIDUAL+ ^,*,ASIGNATURA,Si,nivel0.aiml
+0,SE PUEDEN HACER LOS TRABAJOS EN GRUPO,*,ASIGNATURA,No,nivel0.aiml
+0,* TRABAJO+ ^ GRUP+,*,ASIGNATURA,No,nivel0.aiml
+0,HAY QUE ENTREGAR LOS EJERCICIOS DE LAS RELACIONES DE PROBLEMAS,*,ASIGNATURA,No,nivel0.aiml
+0,^ ENTREGA+ * RELACION+ DE PROBLEMAS,*,ASIGNATURA,No,nivel0.aiml
+0,CUANTO VALE EL PRIMER EXAMEN DE TEORIA,*,ASIGNATURA,Un 50 por ciento de la nota total de teoria,nivel0.aiml
+0,* PRIMER EXAMEN ^ TEORI+,*,ASIGNATURA,Un 50 por ciento de la nota total de teoria,nivel0.aiml
+0,PUEDO RECUPERAR UNA PRACTICA O EXAMEN,*,ASIGNATURA,No,nivel0.aiml
+0,^ RECUPERA+ ^ PRACTICA ^ EXAMEN,*,ASIGNATURA,No,nivel0.aiml
+0,QUE PASA SI ME COPIO DE OTRO ESTUDIANTE,*,ASIGNATURA,Obtengo un cero como nota,nivel0.aiml
+0,* ME COPIO *,*,ASIGNATURA,Obtengo un cero como nota,nivel0.aiml
+0,QUE PASA SI ME DEJO COPIAR DE OTRO ESTUDIANTE,*,ASIGNATURA,Obtengo un cero como nota,nivel0.aiml
+0,* ME DEJO COPIAR *,*,ASIGNATURA,Obtengo un cero como nota,nivel0.aiml
+0,Y SI SUSPENDO EN LA CONVOCATORIA ORDINARIA,*,ASIGNATURA,Tengo que ir a la convocatoria extraordinaria,nivel0.aiml
+0,^ SUSPENDO * ORDINARIA,*,ASIGNATURA,Tengo que ir a la convocatoria extraordinaria,nivel0.aiml
+0,CUANTO VALE LA PRACTICA Y LA TEORIA,*,ASIGNATURA,Cada parte vale un 50 por ciento,nivel0.aiml
+0,^ PRACTICA+ * TEORI+,*,ASIGNATURA,Cada parte vale un 50 por ciento,nivel0.aiml
+0,CUAL ES EL HORARIO DE TUTORIAS DEL PROFESOR DE PRACTICAS,*,ASIGNATURA,Lunes de 10 a 13:30 y martes de 10 a 12:30,nivel0.aiml
+0,^ HORA+ * PROFESOR ^,*,ASIGNATURA,Lunes de 10 a 13:30 y martes de 10 a 12:30,nivel0.aiml
+0,SE PUEDE APROBAR LA PARTE PRACTICA DE LA ASIGNATURA SI NO PRESENTO UNA PRACTICA,*,ASIGNATURA,Si#Comma si la media total es superior a 5,nivel0.aiml
+0,^ APR+ * PRACTIC+ ^ NO *,*,ASIGNATURA,Si#Comma si la media total es superior a 5,nivel0.aiml
+0,CUAL ES LA NOTA MINIMA QUE TENGO QUE OBTENER EN CADA PARTE PARA HACER MEDIA,*,ASIGNATURA,Al menos se debe obtener un 3,nivel0.aiml
+0,^ NOTA MINIMA * MEDIA,*,ASIGNATURA,Al menos se debe obtener un 3,nivel0.aiml
+0,QUE PUNTUACION OBTENGO EN LA PRACTICA 1 SI OPTO POR DEFENDER EL NIVEL 3 Y NO LO SUPERO,*,ASIGNATURA,Obtengo un 6 suponiendo que supero el nivel 1 y 0,nivel0.aiml
+0,^ PUNT+ * PRACTICA 1 * NIVEL 3 ^ NO *,*,ASIGNATURA,Obtengo un 6 suponiendo que supero el nivel 1 y 0,nivel0.aiml
+0,PUEDO ENTREGAR LA PRACTICA 1 SIN HACER LA TAREA RELATIVA AL NIVEL 0,*,ASIGNATURA,No,nivel0.aiml
+0,* PRACTICA 1 * NIVEL 0,*,ASIGNATURA,No,nivel0.aiml
+0,QUE TENGO QUE HACER SI NO PUEDO ASISTIR A LA SESION DE PRACTICAS EN LA QUE ME CORRESPONDE HACER LA DEFENSA DE MI PRACTICA 1,*,ASIGNATURA,Comunicarselo al profesor,nivel0.aiml
+0,^ HA+ * ^ NO ^ ASIST+ * DEFENSA ^ PRACTICA 1,*,ASIGNATURA,Comunicarselo al profesor,nivel0.aiml
+0,CUANTAS PRUEBAS TEORICAS TENDRE A LO LARGO DEL CURSO,*,ASIGNATURA,Tendras dos pruebas teoricas,nivel0.aiml
+0,^ TEORIC+ * CURSO,*,ASIGNATURA,Tendras dos pruebas teoricas,nivel0.aiml
+0,QUE VALE LA PRIMERA PRUEBA TEORICA,*,ASIGNATURA,Un 50 por ciento de la parte teorica,nivel0.aiml
+0,^ PRIMER+ ^ TEORIC+,*,ASIGNATURA,Un 50 por ciento de la parte teorica,nivel0.aiml
+0,EN QUE CONSISTE EL EXAMEN DE EJERCICIOS,*,ASIGNATURA,Ejercicios parecidos a los de la relacion de problemas#Comma por escrito,nivel0.aiml
+0,^ EXAMEN ^ EJERCICIO+,*,ASIGNATURA,Ejercicios parecidos a los de la relacion de problemas#Comma por escrito,nivel0.aiml
+0,QUE DEBERÍA HACER SI NO ESTOY SEGURO DE PODER SUPERAR EL NIVEL 3 DE LA PRÁCTICA 1,*,ASIGNATURA,Deberias plantearte hacer el nivel 2,nivel0.aiml
+0,^ NIVEL 3 ^ PRACTICA ^,*,ASIGNATURA,Deberias plantearte hacer el nivel 2,nivel0.aiml
+0,YO PROGRAMO MUY BIEN EN C++ PODRIA HACER LA PRACTICA 1 EN ESE LENGUAJE,*,ASIGNATURA,Se debe hacer en aiml,nivel0.aiml
+0,^ C++ * PRACTICA ^,*,ASIGNATURA,Se debe hacer en aiml,nivel0.aiml
+0,ME ENCANTAN LOS AGENTES CONVERSACIONALES Y SOY UN EXPERTO EN SU CONSTRUCCIÓN PODRIA USAR UN AGENTE CONVERSACIONAL PARA QUE VAYAN EN MI LUGAR A HACER LA DEFENSA DE PRACTICAS,*,ASIGNATURA,No se pueden utilizar agentes conversacionales para la defensa de las practicas,nivel0.aiml
+0,^ AGENTE+ CONVERSACIONAL+ * DEFENSA ^,*,ASIGNATURA,No se pueden utilizar agentes conversacionales para la defensa de las practicas,nivel0.aiml
